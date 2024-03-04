@@ -3,7 +3,7 @@ run-name:  ${{ github.actor }} is deploy application in development server
 
 on:
   push:
-    - main
+    branches: [ main ]
 
 jobs:
   create-deployment-files:
