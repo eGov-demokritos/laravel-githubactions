@@ -1,1 +1,18 @@
 name: Deploy Application
+run-name:  ${{ github.actor }} is deploy application in development server
+
+on:
+  push:
+    - main
+
+jobs:
+  create-deployment-files:
+    name: Create Deployment Files
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2
+
+      name: Compile CSS and JS
+      run: |
+        npm install
+        npm run prod
